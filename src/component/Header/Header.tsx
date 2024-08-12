@@ -7,7 +7,7 @@ import Cart from "../modal/Cart";
 class Header extends Component{
     render(): ReactNode {
         return(
-            <nav className="navbar navbar-expand-sm fixed-top mb-0 text-bg-dark navbar-dark">
+            <nav className="navbar navbar-expand-sm fixed-top mb-0">
                 <div className="container">
 
                     <Link to="/" className="navbar-brand">

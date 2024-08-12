@@ -1,4 +1,6 @@
-
+.navbar {
+    background-color: #212529;
+}
 .navbar-brand{ /*tên webstie*/
     color: white;
     font-family: 'Anton SC';

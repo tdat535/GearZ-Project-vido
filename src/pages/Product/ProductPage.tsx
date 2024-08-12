@@ -13,7 +13,7 @@ export interface ItemMenu {
   img: string;
   name: string;
   price: number | null;
-  amount: number | null;
+  stock: number | null;
   brand: string;
   category: string;
   status: string;
@@ -316,7 +316,7 @@ class Product extends Component<Props, State> {
             </div>
           </div>
           <div className="showproduct">
-            <table className="table table-striped table-bordered ">
+            <table className="table table-striped table-bordered">
               <thead>
                 <tr>
                   <td style={imgCSS}>ID</td>
@@ -324,7 +324,7 @@ class Product extends Component<Props, State> {
                   <td style={{ ...textHeader, width: '200px' }}>Name</td>
                   <td style={{ ...textHeader, width: '150px' }}>Brand</td>
                   <td style={{ ...textHeader, width: '150px' }}>Price</td>
-                  <td style={{ ...textHeader, width: '150px' }}>Amount</td>
+                  <td style={{ ...textHeader, width: '150px' }}>Stock</td>
                   <td style={{ ...textHeader, width: '150px' }}>Status</td>
                   <td style={{ ...textHeader }}>Actions</td>
                 </tr>
@@ -348,7 +348,7 @@ class Product extends Component<Props, State> {
                       <span>{item.price}</span>
                     </td>
                     <td style={{ textAlign: 'right', ...textBody }}>
-                      <span>{item.amount}</span>
+                      <span>{item.stock}</span>
                     </td>
                     <td style={textBody}>
                       <span>{item.status}</span>

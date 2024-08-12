@@ -17,7 +17,7 @@ interface State {
   name: string;
   brand: string;
   price: number | null;
-  amount: number | null;
+  stock: number | null;
   category: string;
   status: string;
 }
@@ -77,7 +77,7 @@ class AddNewProduct extends Component<Props, State> {
       name: '',
       brand: '',
       price: null,
-      amount: null,
+      stock: null,
       category: '',
       status: ''
     };
@@ -109,9 +109,9 @@ class AddNewProduct extends Component<Props, State> {
     this.setState({ price: isNaN(value) ? null : value });
   };
 
-  amountInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+  stockInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value, 10);
-    this.setState({ amount: isNaN(value) ? null : value });
+    this.setState({ stock: isNaN(value) ? null : value });
   };
 
   categoryInput = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -128,7 +128,7 @@ class AddNewProduct extends Component<Props, State> {
       name: '',
       brand: '',
       price: null,
-      amount: null,
+      stock: null,
       category: '',
       status: ''
     });
@@ -141,41 +141,41 @@ class AddNewProduct extends Component<Props, State> {
       name: '',
       brand: '',
       price: null,
-      amount: null,
+      stock: null,
       category: '',
       status: ''
     });
   };
-
+  
   handleSubmit = () => {
-    const { img, name, brand, price, amount, category,status } = this.state;
-    if (img && name && brand && price !== null && amount !== null) {
+    const { img, name, brand, price, stock, category,status } = this.state;
+    if (img && name && brand && price !== null && stock !== null) {
       this.props.handleAddNewProduct({
         img,
         name,
         brand,
         price,
-        amount,
+        stock,
         category,
         status
-      });
-    
+      })
+
+      toast.success("Add Success");
       this.setState({
         img: '',
         name: '',
         brand: '',
         price: null,
-        amount: null,
+        stock: null,
         category: '',
         status: ''
       });
 
-      toast.success("Add Success");
+      this.props.handleClose();
 
     }else {
-      toast.error("Missing Product")
+      toast.error("Please fill out all the information below.")
     }
-    this.props.handleClose();
   };
 
   render(): ReactNode {
@@ -245,16 +245,16 @@ class AddNewProduct extends Component<Props, State> {
                   style={inputTextCSS}
                   aria-required
                 />
-                <label htmlFor="amount">
-                  <b>Product Amount</b>
+                <label htmlFor="stock">
+                  <b>Product Stock</b>
                   <i className="fa-solid fa-star-of-life"></i>
                 </label>
                 <input
-                  id="amount"
-                  value={this.state.amount ?? ''}
-                  onChange={this.amountInput}
+                  id="stock"
+                  value={this.state.stock ?? ''}
+                  onChange={this.stockInput}
                   type="number"
-                  placeholder="Amount"
+                  placeholder="stock"
                   style={inputTextCSS}
                   aria-required
                 />
