@@ -1,0 +1,16 @@
+input {
+    border-radius: 8px;
+    border: 0.5px solid #555;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.fa-star-of-life::before  {
+  color: red;
+  margin: 8px;
+  font-size: 10px
+}

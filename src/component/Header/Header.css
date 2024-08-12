@@ -1,0 +1,40 @@
+
+.navbar-brand{ /*tên webstie*/
+    color: white;
+    font-family: 'Anton SC';
+    font-size: 50px;
+    
+}
+.navbar-brand:hover{
+    color: white;
+}
+.navbar-brand:visited{
+    color: white;
+}
+
+
+.nav-link{ /*mấy cái mục kế bên tên website*/
+    color: white;
+}
+.searchBar{
+    /* border: 1px solid blue; */
+    width: 400px;
+}
+.right-cate-holder{
+    width: 300px;
+    /* border: 1px solid red; */
+    justify-content: flex-end;
+}
+.btn-dark{
+    margin-left: 10px;
+    font-size: 20px;
+}
+.avatar{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: gray;
+}
+.accountIcon{
+    margin-left: 10px;
+}

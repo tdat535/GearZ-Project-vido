@@ -1,0 +1,27 @@
+/* li:hover {
+    transition: 'background-color 0.3s ease',
+    background-color: '#555', 
+    color: 'white',
+} */
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing:border-box;
+}
+
+.itemMenu {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.itemMenu:hover {
+    background-color: #555;
+    color: white;
+}
+.row{
+    display:flex;
+}
+.col-9{
+    margin-left: auto;
+}
+
+
